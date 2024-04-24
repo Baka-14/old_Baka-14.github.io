@@ -1,8 +1,32 @@
-/* CSS */
 
 @font-face {
     font-family: 'Freight Display Pro';
     src: url('path/to/FreightDisplayPro-Regular.ttf') format('truetype'); /* Adjust the path as necessary */
+}
+
+.Nav-bar-links div{
+    margin:16px;
+}
+
+.Nav-bar-links {
+    margin-right: 10px;
+    display: flex; 
+    justify-content: space-between;
+}
+
+.Icon{
+    text-align: center;
+    margin:16px;
+    margin-left: 26px;
+}
+
+.Nav-bar{
+    display: flex; 
+    justify-content: space-between;
+    border-top: 10px solid black;
+    border-bottom: 10px solid black;
+    border-width: 2px;
+    
 }
 
 body::before {
@@ -25,19 +49,42 @@ body {
     position: relative;
 }
 
+.center-text{
+    text-align: center;
+    margin-top: 220px;
+    
+}
+
+.center-text-heading{
+    font-size: 100px;
+    font-weight: bolder;
+    margin-bottom: 0px;
+}
+
+.center-text-heading p{
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 0px;
+}
+
+.center-text-para p{
+    font-family: 'Open Sans', sans-serif;
+    font-size: x-large;
+    font-weight: 90px;
+    
+}
+
 p {
     font-family: 'Open Sans', sans-serif;
 }
 
-.Name-tag {
-    text-align: center; /* Center align the content */
+
+.custom-link {
+    color: inherit; /* Use the same color as the surrounding text */
+    text-decoration: none; /* Remove the underline */
 }
 
-.Name-tag p {
-    font-family: 'Freight Display Pro', sans-serif;
-    font-size: 100px;
-    font-weight: bold;
-     /*Set the font size to 24 pixels */
+.custom-link:hover {
+    text-decoration: underline; /* Add underline on hover */
 }
 
 .bold-text {
