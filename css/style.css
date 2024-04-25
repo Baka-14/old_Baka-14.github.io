@@ -1,8 +1,4 @@
 
-@font-face {
-    font-family: 'Freight Display Pro';
-    src: url('path/to/FreightDisplayPro-Regular.ttf') format('truetype'); /* Adjust the path as necessary */
-}
 
 .Nav-bar-links div{
     margin:16px;

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sai Srikar</title>
+    
+    <link rel="icon" href="/images/favicon.jpeg" id="favicon" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/blogs.css">
+    <link rel="stylesheet" href="/css/blog-page.css">
+
+   
+    
+</head>
+<body>
+    
+    <nav class="Nav-bar">
+        <div class="Icon"><a href="../index.html" class="custom-link">Sai Srikar Ventrapragada</a></div>
+        <div class="Nav-bar-links">
+            <div><a href="/pages/blogs.html" class="custom-link">Blogs</a>     </div> 
+            <div><a href="/pages/blogs.html" class="custom-link">Projects</a>  </div>
+            <div><a href="/pages/projects.html" class="custom-link">About</a>     </div>
+            <div><a href="/pages/resume.html" class="custom-link">Resume</a>   </div>
+        </div>
+    </nav> 
+
+
+    <div class="blog-div">
+
+            <div class="blog-heading">
+                <p>
+                    The Global Information Tracker (GIT) Blog Part-1
+                </p>
+            </div> 
+
+            <div class="blog-date">
+                <p>
+                    9th April 2024
+                </p>
+            </div>
+
+            <div class="blog-content">
+                <p>
+                    Now one thing you need to remember is that when you create branches the log history reflected to you depends on the branch the HEAD is currently present on. For example if you have two different branches and if you checkout to branch B1 and check the history and then checkout to branch B2 and check the history there is a high possibility that both of them wont reflect the same logs as branches offer us an independent line of development. Think of them as separate project folders. Once you have learnt how to create multiple branches the next step is to merge the two branches, this is where it can tricky very fast because of merge conflicts which you will see later on. In order to merge branches you first checkout to the branch which you want to update and then perform git merge <branch name you want the branch to be merged to>. In general the main branch is known to be the stable branch of the project. Please note, there are different kinds of merges in Git. The most basic merge is known as fast forward merge where you move the tip of a branch to the match the tip of another branch and after this merge both the branches have same history. Once this is done for hygiene purpose, if you are not going to continue experimenting on any of the branches post merging you can delete by with git branch -d <branch name>.  Here the -d flag tells Git to delete the branch. A key point to understand here is that Git doesn’t delete branches which have unmerged changes. However if one is sure that they don’t need the branch they run git branch -D  <branch name> to forcefully delete it.
+                    
+                    Merging branches is not always linear. If you have a situation where when one try to merge two branches that have edited the same content. Git doesn’t know how to combine the two changes, so it stops to ask us what to do. Think of merge conflict like messing up the shared variables in a critical section. The way to solve merge conflict is to manually intervene and update as to what are the changes we want. Git uses <<<<<<<, =======, and >>>>>>>  as markers to show us the conflict and  these should be deleted before we commit the file once changes are made. When we are committing this files we don’t need to use -m flag as Git already knows it’s a merge of the conflict list.  For example if you have the font style to be Arial in one branch and Times new romain in the other, when you merge you need to choose which style you want.
+                    
+                    When we try to merge two branches whose histories have diverged with respective to each other, then a 3-way merge takes place. One could have a situation where a merge conflict might take place. To solve the issue as discussed above Git creates an extra merge commit as the link between both the branches and during the merge a prompt shows up for you to write a reason for the merge. If you are annoyed but the constant git add <filename> before committing then you can skip the step by directly adding “-a”  flag to your git merge message i.e git commit -a -m “<your commit message>”. Here git tracks all files into the snapshot, but a key point to note is this works only when the files are tracked, if the files are not tracked one must use the git add <filename of file to track> before we commit.
+                    
+                     To help you understand branches better, the most types of branches are as following: 
+                    
+                    1.Topic Branch: is used to work on a specific topic or task. It is typically created off the main branch (such as main) and is used to isolate changes related to that topic. Once the work on the topic is completed, the changes in the topic branch can be merged back into the main branch.	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                    
+                    2.Feature Branch: is similar to a topic branch but it is specifically used to develop a new feature for the project. It is created off the main branch and is used to work on the new feature in isolation from the main codebase. Once the feature is complete, the changes can be merged back into the main branch. This branch generally is maintained for longer duration than Topic branches. 
+                    
+                    3.HotFix Branch:  is used to quickly address a critical issue in the codebase, such as a bug or security vulnerability. It is created off the main branch or sometimes a release branch and is used to make the necessary changes. Once the fix is complete, the hotfix branch is merged back into the main branch (and possibly other active branches) to apply the fix to the codebase.   
+                    
+                     A merge conflict takes places when we try to merge branches that have edited the same content. Git doesn’t know how to combine the two changes, so it stops to ask us what to do. </p>
+            </div>
+
+    </div>
+ 
+
+    
+
+
+
+
+
+    <footer>
+        <p> copyright &copy;2024 Sai Srikar</p>
+    </footer>
+
+</body>
+</html>
