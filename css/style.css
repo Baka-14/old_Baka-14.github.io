@@ -76,11 +76,12 @@ p {
 
 .custom-link {
     color: inherit; /* Use the same color as the surrounding text */
-    text-decoration: none; /* Remove the underline */
+    
+    /* text-decoration: none; Remove the underline */
 }
 
 .custom-link:hover {
-    text-decoration: underline; /* Add underline on hover */
+    text-decoration: none; /* Add underline on hover */
 }
 
 .bold-text {

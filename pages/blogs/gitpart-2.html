@@ -9,14 +9,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/blogs.css">
-
-   
+    <link rel="stylesheet" href="/css/blog-page.css">
     
 </head>
+
 <body>
     
     <nav class="Nav-bar">
-        <div class="Icon"><a href="../index.html" class="custom-link">Sai Srikar Ventrapragada</a></div>
+        <div class="Icon"><a href="../../index.html" class="custom-link">Sai Srikar Ventrapragada</a></div>
         <div class="Nav-bar-links">
             <div><a href="/pages/blogs.html" class="custom-link">Blogs</a>     </div> 
             <div><a href="/pages/blogs.html" class="custom-link">Projects</a>  </div>
@@ -25,18 +25,197 @@
         </div>
     </nav> 
 
+    <div class="blog-div">
 
- 
+        <div class="blog-name">The Global Information Tracker (GIT) Blog Part-2</div>
+        <div class="blog-date">14th April 2024</div>     
+        <div class="fore-note">This blog is the second half of a two-part series blog on Git. If you have not read the <b><a href="./gitpart-1.html" class="custom-link">first blog</a></b> I would highly recommend one to read the first one for context and then refer to this for a smooth understanding.</div>           
 
+    <div class="blog-content">
+
+        <div class="blog-table-of-content">
+            <div class="table-of-content">Table of content</div>
+            <div class="table-heading-part"> <span class="table-heading">Part-3 Advance Git :</span> In advance git we explore concepts like rebasing, manipulating history, look into various workflows and much more </div>
+            <div class="table-heading-part"> <span class="table-heading">Part-4 Conclusion :</span> In this section one gets a sneak into how git works under the hood i.e. plumbing commands </div>
+        </div>
+    </div>
+
+    <div class="fore-note">Note: After readings the blogs if you are still curious and want to in dive more deep. Then looking into the documentation and code is the best way to do : ) These are linked below in the references section. </div>
     
+    <div class="heading">Part-3 Advance Git</div>
+    <div class="sub-heading">3.1 Git rebasing </div>
+    <div class="para-content">
+        Making multiple branches and working on a project can quickly make the history of the project very complex. Although it might seem pretty fine for someone working on it since the beginning but if someone new has to join the team or someone wants to contribute to the project 
+        then things can get overwhelming very quickly as it would be an uphill task to understand the complex history if required. To make the git history understandable we shall look into the concept of Rebasing. 
+        Git rebase allows us to move a feature branch to a new parent commit i.e it allows us to detach the feature branch and attach it to the starting point of main branch. The benefit of this is that this makes the history linear. 
+        By making the history linear it makes it easy for someone to follow the history of the repo without having to go off tangents when they see branches in the history. Essentially <b>git rebase</b> gives you the power to rewrite history, let it be adding in new changes, modifying the old ones or deleting a few of them.
+    </div>
+
+    <div class="para-content">
+        The beauty of rebase is two fold. One it allows you to do fast-forward merges instead of the complex 3-way merges. Two it allows to stay updated with the main branch without having a merge commit i.e the way you perform a rebase is quite similar to a merge, where you go to the branch you want to move and then 
+        you perform <b>git rebase &lt;the name of branch you want to move to&gt;</b>. In addition to this, <b>git rebase</b> allows us to manipulate individual commits. To get to this level of wizardry all you have to do is add <b>-i</b> flag to your rebase command to make the rebase interactive i.e <b>git rebase -i &lt;the branch you want to rebase to&gt;</b>. A text editor opens up where you get to see the log history. 
+        There are four commands one can use to edit the log history. One can combine multiple commits into a single commit by replacing pick with squash and then saving the file. When one try’s to bunch a group of commits into a single one by performing the above actions, Git asks whether to replace the commit messages with a new single commit message. The edit keyword allows one to go to a specific commit and edit it, 
+        think of it like updating a commit that you made a while ago(back to the future?).  Don’t worry, if things get complicated you can always abort the rebase by performing <b>git rebase —abort</b>.  
+    </div>
+
+    <div class="para-content">
+        Given the rapid pace of development one may end up committing too many changes at once, later on one can revise the commit history to ensure it's clear and readable for other developers. To do this one first start’s an interactive session with <b>git rebase -i &lt;branch you want to move this to&gt;</b>. Next, change the pick to edit on the commit you want to go back to and delete all the commits above it. 
+        Once that’s done one can perform <b>git reset —mixed Head~1 </b> where you are reseting your working directory by moving the <b>HEAD</b> one step back. Now if you do ~n you move the <b>HEAD</b> n steps back. The flag <b>—mixed</b> helps in keeping all the files/changes of the commit you are altering in the directory even though you alter the history. This might remind you about how back in <a href="gitpart-1.html" class="custom-link">basics</a> 
+        we used <b>git reset —hard </b> to go back to the most recent commit. 
+    </div>
+
+    <div class="para-content">
+        An interesting thing to note is that when you are performing rebase you are not present on any branch while the rebase is being performed. Once the session is ends i.e when you type in <b>git rebase —continue</b>. That’s when you come back to a branch, so think of rebasing as a technique thats done in isolation.  
+    </div>
+
+    <div class="para-content">
+        Now if you are ever at a state where you want to take a look at a branch that you deleted without merging or if you by mistake moved back more than intended while using <b>git reset</b>, don’t worry there is a place where all of the actions/commits made are stored in. 
+        <b>git reflog</b> lets you look at all the changes you made to the repository. Reflog is a chronological listing of our history, without regard for the repository’s branch structure. This lets us find all the dangling commits that would otherwise be lost from the project history. 
+        To retrieve commits you lost, checkout to the commit id of it and then create a branch there and checkout to main and merge it, this way one can undo changes. 
+    </div>
+
+    <div class="sub-heading">3.2 Multi user workflow  </div>
+    <div class="para-content">
+        Git works as an enabler for programmers to collaborate on projects. In this section, let’s try to understand the various kinds of  workflows, the different developer platforms and how people collaborate in the real world using Git. When you want to "contribute" to a project you need to have the project’s repo and this can be 
+        achieved through either the internet or by being on the same local network or we can even have them on our local filesystem. These kind of repos are called as "remote repositories", remote because the repo is not your own. The first step to contribute to a project like this is to clone their codebase, <b>git clone &lt;weblink of repo&gt;</b>  can be used if you are trying to clone the repo from 
+        a developer site like <a href="https://github.com/" class="custom-link">"Github"</a>.  <b>git clone &lt;path of codebase&gt;</b> can also be used if the repo is in a shared workspace. 
+    </div>
+
+    <div class="para-content">
+        To check if your repo has any remote connections one can perform <b>git remote</b>. If your repo is a clone it would  usually show an origin connection, here origin is the remote repo pointing to the original repo which we cloned. If the repo you want to connect remotely is present locally then 
+        <b>git remote add &lt;name for remote&gt;  &lt;path to the repo&gt; </b> should create a connection with it. Apart from just accessing repos locally one can use SSH to access repos on someone else’s computer. Each time when an update is made in the remote repo one needs to fetch them by performing <b>git fetch &lt;remote repo name&gt;</b>. 
+        One can check for remote branches by performing <b>git branch -r</b>. To work on these remote branches you either have to merge them into an existing branch or create a new branch off them. Similar to <b>git fetch </b> which fetches changes from a remote repo, we use <b>git push &lt;repo-name&gt; &lt;branch name&gt;</b> to push our branches to another remote repository. 
+        An important thing to note is that pushing does not directly push the tags associated with a particular branch, you have to push these tags as well if requited. From my perspective, adding in a flag that automatically sends the tags attached with the commits can be a good contribution one can make to the git codebase. Pushing creates new local branch/s as it is a necessary tool for maintaining public repositories. 
+        Whereas fetching from the remote repositories creates remote branches.   
+    </div>
+
+    <div class="para-content">
+        If you are building something big you would mostly either have a centralised/distributed workflow. In a centralised workflow you would have all the repos connected to a central repo where one can push and fetch changes only from it. These central repos are typically hosted on a server to allow an online mode of collaboration between developers around the world. 
+        To create one you need to run <b>git init —bare &lt;centralreponame&gt; .git</b> . As you can see, we have used <b>—bare</b> a flag so as to not create a working directory but to just have a central logging system. Think of this as a combined history file of the various developers working on the project. Once the central repo is up we ask all the developers to add it into their individual developer repos. 
+        In case if there is already a remote repo connection use <b>git remote rm &lt;existing connection name&gt;</b> to remove the existing connection and set up a connection only with the central repo. In case your central repo is on a server then <b>git remote add ssh:&lt;user@example.com&gt;/&lt;path to central-repo.git&gt;</b> is used to establish a connection with it. 
+    </div>
+
+    <div class="para-content">
+        We push the history of our work with <b>git push origin main</b> to the central repo. The central repo would contain the history of our entire project. To avoid merge conflicts and divergence in the origin/main branch and your working directories main branch always remember to never rebase commits that have been pushed to a shared repo. 
+        If you really need to change a public commit use <b>git revert</b>. Given the fact that multiple developers are working on the central repo, there might arise a time where, when one tries to push changes to origin they might be rejected. This is because the origin/master branch has progressed since the last time one has fetched from it. 
+        The rejection is performed so as to allow only fast-forward merges. To overcome this issue one needs to fetch the changes from the origin/master and rebase their commits to it before pushing. This factors in the changes other developers have made and rebases ones changes to add them in after the changes that have been pushed to the origin/main. 
+        The benefit of going through and setting up a central repo ensures us that no one overwrites another’s content as the push would be rejected if otherwise.  
+    </div>
+
+    <div class="para-content">
+        When we move onto to a distributed workflow where we host repo/s on a remote server or on a DVCS platform(like GitHub/Gitlab), we ideally would not want any Tom, Dick, and Harry to be able to push to the official central repository since it could lead to multiple issues. 
+        For example <a href="https://blog.gitguardian.com/the-backdoor-that-almost-compromised-ssh-security/" class="custom-link">security issues</a> can be one of the many problems
+    </div>
+    
+    <div class="para-content">
+        To maintain sanity in our codebase it is highly recommended to have both a public and a private repository for every developer. The way many DVCS deal with this is by using the HTTPS protocol i.e  each used is required to be authenticated before they can push code to the repo. However we use the HTTP protocol to pull code so as to allow anyone to download the code and work on it. 
+    </div>
+
+    <div class="para-content">
+        In general the workflow that everyone follow is known as integrator. The integrator workflow requires that everyone pull from a single place which is the official repository and push all of their changes to their own public repositories. In this way, additions from one contributor can be approved, integrated, 
+        and made available to everyone without having to interrupt the developments being made by others. While this setup forces one to keep track of more remotes, it also makes it much more easier to work with a large number of developers. You’ll never have to worry about security using an integrator workflow because 
+        the maintainers will be the only one with access to the "official" repository. 
+    </div>
+
+    <div class="para-content">
+        There’s an interesting side-effect to this kind of security. By giving each developer their own public repository, the integrator workflow creates a more stable developer environment for open-source software projects. Should the lead developer stop maintaining the "official" repository, any of the other participants could 
+        take over by simply designating their public repository as the new "official" project. These aspects make Git a distributed version control system: where there is no single central repository that Git forces everyone to rely upon.
+    </div>
+
+    <div class="para-content">
+        The Integrator workflows is generally bulky i.e a contributor shares a complete branch, to overcome this issue let’s look into the concept of <b>patch workflows</b>. In patch workflow the communication happens on a commit level basis. To create a patch we use <b>git format-patch &lt;name of branch the commits are missing from&gt;</b> . 
+        When you run this you create a patch file that contains information about every commit in the current branch that is missing from the main by creating a .patch file. Instead of having to use the <b>git log</b> to look at the history and figure out what are the changes that have been made, patches condenses this information and makes it very quick and easy to look at the changes being made. 
+        Back in the day when the DVCS weren't so developed, patches were used as a method to highlight what changes have been made and these patch files use to be mailed to other developers. This can be understood when you realise that one can use the <b>git send-email</b> command emails to send in mails with the .patch files. 
+        Ideally one would just download these patch files and use <b>git am &lt; &lt;path to patch file&gt;</b> to add in the changes being made commit by commit. The <b>git am command</b> is configured to read from something called "standard input" and the "&lt;" character is how we can turn a file’s contents into standard input.  
+    </div>
+    
+    <div class="para-content">
+        The benefit of patches is modularisation of changes into commits. This gives one the freedom to isolate commits they want and move them around as they please. From the maintainer’s perspective, patches also provide the same security as the integrator workflow: as he/she still won’t have to give anyone access to the "official" repository 
+        and they won’t have to keep track of every developers remote repositories. As a developer, you’re most likely to use patches when you want to fix a bug in someone else’s project. After fixing it, you can send them a patch of the resulting commit. For this kind of one-time-fix, it’s much more convenient for you to generate a patch than to set up a public Git repository. 
+    </div>
+
+    <div class="sub-heading">3.3 Tips and Tricks</div>
+    <div class="para-content">  
+        Let’s get into the juicy part of this blog where we dive into various practical tips and tricks related to git that one can use in their everyday life. Each para below are different tricks and tips I have picked up along the way during undergrad.
+    </div>
+    
+    <div class="para-content">
+        An easy way to look at the logs of various branches when the repo becomes very big is <b>git log &lt;since&gt;..&lt;until&gt;</b> displays the difference in snapshots that are present from until but not from since. Adding in the <b>—stat</b> flag shows one information regarding as to what files have been changed in each commit. 
+        This helps one decide exactly what files should they look into check what changes have being made to the repo. <b>git log -n N</b> lets you look at last <b>N</b> commits from the current <b>HEAD</b>. This is equivalent to <b>git log HEAD~N..HEAD</b> which is seems to be more tedious and less intuitive compared to <b>git log -n N</b>. 
+    </div>
+
+    <div class="para-content">
+        Once you are done with the project or have finished developing a version of it, it is always good to have a local copy of the remote repo.This can be done with <b>git archive &lt;branch name&gt; —format=zip/tar —output=../&lt;name&gt;.zip/.tar</b>  depending on your preferences one can have a .zip or a .tar file. 
+        These files can also be used to share the project with someone who doesn’t have git installed (for example: A client). Similarly <b>git bundle create ../repo.bundle &lt;branchname&gt;</b> creates a bundle file. Unlike the zip or tar files, the bundle files contain the history/log of all the commis that have been made while building the project. 
+        Bundle files also allows people to clone the repo with having to interact with the remote copy by just cloning the bundle. 
+    </div>
+
+    <div class="para-content">
+        Using a <b>.gitignore</b> file one can make files/directories stored in working directory invisible to Git. Files like your api keys or generated files can be left untracked without having to use the <b>git status</b> command. To ignore files with a specific extension we can use <b>"*"</b>. For example to  we can use <b>*.exe</b> and <b>*.out</b> to ignore the executables generated in a project thats written in C.
+    </div>
+
+    <div class="para-content">
+        If you are ever find yourself in a pickle where you are working on something and it’s not yet complete to commit and have an emergency task that’s come up. Then one can stash the changes they have made with <b>git stash</b> and post the completion of the emergency task one can comeback to the work in progress task with <b>git stash apply</b>. One can stash changes among multiple branches as well i.e inter branch stashing is also possible. 
+        Another exciting aspect of Git is its <b>Hooks</b>, that are located within the <b>.git</b> folder. A hook is a script that Git executes every time a particular event occurs in a repository. Each of the <b>.sample</b> scripts in the hooks directory represents a different event that you can listen for, and each of them can do anything, from automatically creating and publishing releases to enforcing a commit policy and making sure a project compiles. 
+        For more details regarding hooks refer to the official <a href="https://git-scm.com/doc" class="custom-link">git documentation</a>. To look at the difference between two commits one can use the <b>git diff command</b>, where <b>git diff &lt;commit-1&gt;..&lt;commit-2&gt;</b> shows us the exact changes that have being made. The <b>git diff command</b> is incredibly useful for pinpointing contributions from other developers. Using <b>git diff</b> without any arguments shows us the uncommitted changes. 
+    </div>
+    
+   <div class="para-content">
+    One can also use the <b>git checkout</b>command to checkout files as to what were the various version of it were like. For example one perform <b>git checkout HEAD &lt;filename&gt;</b>. This checkouts out the file to its most recent version of it.
+   </div>
+
+   <div class="para-content">
+    Aliasing commands lets you traverse and use git faster. This can be achieved by making changes to the <b>config file</b> with commands like <b>git config —global/—local alias.co checkout</b>, this lets you use the checkout command with just <b>git co</b>. One can learn more about it by referring to git documentation. Git includes a long list of configuration options, all of which can be found in the official manual. 
+    Note that storing your global configurations in a plaintext file makes it incredibly easy to transfer your settings to a new Git installation: just copy <b>~/.gitconfig</b> onto your new machine. 
+   </div>
+
+    <div class="heading">Part-4 Conclusion</div>
+
+    <div class="para-content">
+        In the last leg of the blog, let’s take a look at the actual internals of git. <b>Plumbing</b> refers to the low level commands that give us access to the actual internal representation of the codebase. Let’s start with something very basic i.e what happens when we commit a message. 
+        The plumbing command used here is <b>git cat-file commit HEAD</b>, this shows us the commit object that contains the parameters: tree, parent, author, committer and the commit message. Git follows a <b>tree object representation</b> of snapshots where each commit is tied to a parent which in turn is a commit. 
+    </div>
+
+    <div class="para-content">
+        The structure in which Git works is: you have blob objects that store file data, above which are tree objects that store other trees and blob objects. Then you have commit objects that tie trees into the project history. When we perform <b>git ls-tree</b> we get to 
+        look at the various blobs and trees. We can take a look at a particular blob with <b>git cat-file blob &lt;blob-ID&gt;</b>. When you run this you get to look at as to what is the file data that is stored in the blob. Git shares these same blobs across multiple trees. All of the data is stored in the <b>objects</b> 
+        folder inside the <b>.git</b> directory. Each of the folders listed inside are either trees or blobs that contain information/data regarding the codebase. One can compress all of the data present in these folders with <b>git gc</b>, the purpose of <b>git gc</b> is to compresses these objects when the repo grows out to be very big. 
+        Running <b>git gc</b> every now and then is usually a good idea, as it keeps your repository optimised. 
+    </div>
+
+    <div class="para-content">
+        When we perform a <b>git commit</b>, first the index is updated and it is added to a tree which generates a commit ID for it. Post this, the tree object is attached to the parent tree. One can perform this entire process manually as well with the help of plumbing commands. 
+        Once this is done we have to attach this dangling commit by updating our <b>HEAD</b> to it. Updation of the <b>HEAD</b> can be done by going to the head file in the references under the <b>.git</b> directory and then changing in where the <b>HEAD</b> points to. 
+    </div>
+
+    <div class="para-content">
+        As we start to wrap things up remember that as you migrate these skills to real-world projects, Git is merely a tool for tracking your files, not a cure-all for managing software projects. No amount of intimate Git knowledge can make up for a haphazard set of conventions within a development team.
+    </div>
 
 
+    <div class="para-content">
+        This blog was meant to prepare you for the realities of distributed software development and not to transform you into a Git expert overnight. You should be able to manage your own projects, collaborate with other Git users, and perhaps most importantly, understand exactly what any other piece of Git documentation is trying to convey. 
+        With all of these convenient features, it’s easy to get so caught up in designing the perfect workflow that you lose sight of Git’s underlying purpose. As you add new commands to your repertoire, remember that Git should always make it easier to develop a software project—never harder. If you ever find that Git is causing more harm than good, 
+        don’t be scared to drop some of the advanced features and go back to the basics.  Pat yourself on the back for sticking through the blogs and understanding a portion of <b>Global Information Tracker</b> also known as <b>Git</b>.
+    </div>
+
+    <div class="para-content">
+        While it’s impossible to cover all of Git’s supporting features in a two part blog series such as this, I hope that you now have a clearer picture of Git’s numerous capabilities. In the resources/references I have shared links of some resources one can look into to dive into the depths of Git. If you have made it this far, let me know your thoughts, you can mail me with your feedback and ensure that subject is <b>Git blog 808</b>.
+        I hope you enjoyed the journey of trying to understand git a little better : )
+    </div>
 
 
+    <div class="heading">Resources/References</div>
+    <div class="references">1. <a href="https://git-scm.com/doc" class="custom-link">Git documentation</a></div>
+    <div class="references">2. <a href="https://www.amazon.in/Rys-Git-Tutorial-Ryan-Hodson-ebook/dp/B00QFIA5OC" class="custom-link">Ry's Git Tutorial Book</a></div>
+    <div class="references">3. <a href="https://learngitbranching.js.org/" class="custom-link">Interactive Git Tutorials</a></div>
+    <div class="references">4. <a href="https://git-scm.com/book/en/v2" class="custom-link">Pro Git Book</a></div>
+    <div class="references">5. <a href="https://about.gitlab.com/images/press/git-cheat-sheet.pdf" class="custom-link">Git CheatSheet</a></div>
 
-    <footer>
-        <p> copyright &copy;2024 Sai Srikar</p>
-    </footer>
+</div>
+
+<div class="footer">copyright &copy;2024 Sai Srikar</div>
 
 </body>
+
 </html>
