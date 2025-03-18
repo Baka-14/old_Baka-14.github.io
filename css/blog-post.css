@@ -1,0 +1,251 @@
+/* Blog post styles */
+.blog-post {
+    max-width: 800px;
+}
+
+.post-header {
+    margin-bottom: 40px;
+}
+
+.post-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.post-meta {
+    font-size: 16px;
+    color: var(--secondary-color);
+    margin-bottom: 30px;
+}
+
+.post-content {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 60px;
+}
+
+.post-content p {
+    margin-bottom: 25px;
+}
+
+.post-content h2 {
+    font-size: 28px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.post-content h3 {
+    font-size: 24px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.post-content ul, .post-content ol {
+    margin-bottom: 25px;
+    padding-left: 25px;
+}
+
+.post-content li {
+    margin-bottom: 10px;
+}
+
+.post-content blockquote {
+    border-left: 4px solid var(--accent-color);
+    padding-left: 20px;
+    margin-left: 0;
+    color: var(--secondary-color);
+    font-style: italic;
+}
+
+.post-content code {
+    background-color: #f0f0f0;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-family: monospace;
+}
+
+.post-content pre {
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+    margin-bottom: 25px;
+}
+
+.post-content pre code {
+    background-color: transparent;
+    padding: 0;
+}
+
+.post-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin: 25px 0;
+}
+
+.post-footer {
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid #eee;
+}
+
+.post-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.prev-post, .next-post {
+    font-weight: 600;
+}
+
+.post-references {
+    margin-top: 40px;
+}
+
+.post-references h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.post-references ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.post-references li {
+    margin-bottom: 10px;
+}
+
+.table-of-content {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+.table-of-content h3 {
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.table-heading-part {
+    margin-bottom: 10px;
+}
+
+.table-heading {
+    font-weight: 600;
+}
+
+.fore-note {
+    background-color: #f0f8ff;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+/* Responsive adjustments for blog posts */
+@media (max-width: 1024px) {
+    .post-title {
+        font-size: 32px;
+    }
+    
+    .post-content {
+        font-size: 17px;
+    }
+    
+    .post-content h2 {
+        font-size: 26px;
+    }
+    
+    .post-content h3 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 768px) {
+    .post-title {
+        font-size: 28px;
+    }
+    
+    .post-content {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+    
+    .post-content h2 {
+        font-size: 24px;
+        margin-top: 30px;
+    }
+    
+    .post-content h3 {
+        font-size: 20px;
+        margin-top: 25px;
+    }
+    
+    .post-navigation {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .table-of-content {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .post-title {
+        font-size: 24px;
+    }
+    
+    .post-meta {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+    
+    .post-content {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+    
+    .post-content p {
+        margin-bottom: 20px;
+    }
+    
+    .post-content h2 {
+        font-size: 22px;
+        margin-top: 25px;
+        margin-bottom: 15px;
+    }
+    
+    .post-content h3 {
+        font-size: 18px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    
+    .post-content ul, .post-content ol {
+        padding-left: 20px;
+    }
+    
+    .table-of-content {
+        padding: 12px;
+        font-size: 14px;
+    }
+    
+    .table-of-content h3 {
+        font-size: 18px;
+    }
+    
+    .fore-note {
+        padding: 12px;
+        font-size: 14px;
+    }
+} 

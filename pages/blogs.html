@@ -3,37 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sai Srikar</title>
+    <title>Blogs | Sai Srikar</title>
     
     <link rel="icon" href="../images/favicon.jpeg" id="favicon" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/blogs.css">
-
-   
-    
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/modern-style.css">
 </head>
 <body>
-    
-    <nav class="Nav-bar">
-        <div class="Icon"><a href="../index.html" class="custom-link">Sai Srikar Ventrapragada</a></div>
-        <div class="Nav-bar-links">
-            <div><a href="/pages/blogs.html" class="custom-link">Blogs</a>     </div> 
-            <div><a href="/pages/projects.html" class="custom-link">Projects</a>  </div>
-            <div><a href="/pages/about.html" class="custom-link">About</a>     </div>
-            <div><a href="/pages/resume.html" class="custom-link">Resume</a>   </div>
-        </div>
-    </nav> 
+    <div class="container">
+        <aside class="sidebar">
+            <div class="profile">
+                <h1 class="name">Sai Srikar Ventrapragada</h1>
+                <p class="title">Computer Science Researcher</p>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="/pages/blogs.html" class="active">Blogs</a></li>
+                    <li><a href="/pages/projects.html">Projects</a></li>
+                    <li><a href="/pages/about.html">About</a></li>
+                    <li><a href="/pages/resume.html">Resume</a></li>
+                </ul>
+            </nav>
+            
+            <div class="social-links">
+                <!-- Add your social media links here -->
+                <a href="https://github.com/" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
+                <a href="mailto:saisrikar20uari164@mahindrauniversity.edu.in">Email</a>
+            </div>
+        </aside>
 
-    <div class="blog-component">
-        <div class="blog-header">
-                <div class="blog-title-heading"><a href="./blogs/gitpart-1.html" class="custom-link">The Git Blog Part-1 </a> </div>
-                <div class="blog-title-date"> 9th April 2024         </div>
-        </div> 
+        <main class="content">
+            <section class="page-header">
+                <h2>Blog Posts</h2>
+                <p>Thoughts, research, and explorations</p>
+            </section>
 
-        <div class="blog-abstract"> This blog is the first part in a two-part blog series aimed at  getting one familiar with Git </div>
+            <section class="blog-list">
+                <div class="post-card">
+                    <h3><a href="./blogs/optimal-control.html">Optimal Control Theory 101</a></h3>
+                    <p class="post-date">September 15, 2024</p>
+                    <p class="post-excerpt">An introduction to optimal control theory, covering problem formulation, Pontryagin's Maximum Principle, Linear Quadratic Regulator (LQR), and applications in various fields.</p>
+                    <a href="./blogs/optimal-control.html" class="read-more">Read more →</a>
+                </div>
+                
+                <div class="post-card">
+                    <h3><a href="./blogs/som.html">Self-Organizing Map for Automated Quality Assessment</a></h3>
+                    <p class="post-date">August 27, 2024</p>
+                    <p class="post-excerpt">This research work is part of a larger study on generating music algorithmically through Differential Evolution. In this paper, Self Organizing Maps (SOM) are employed as a Fitness Function and discriminator across emotional states.</p>
+                    <a href="./blogs/som.html" class="read-more">Read more →</a>
+                </div>
+                
+                <div class="post-card">
+                    <h3><a href="./blogs/gitpart-2.html">The Git Blog Part-2</a></h3>
+                    <p class="post-date">April 14, 2024</p>
+                    <p class="post-excerpt">This blog is the second part in a two-part blog series aimed at getting one familiar with Git. We explore concepts like rebasing, manipulating history, look into various workflows and much more.</p>
+                    <a href="./blogs/gitpart-2.html" class="read-more">Read more →</a>
+                </div>
+                
+                <div class="post-card">
+                    <h3><a href="./blogs/gitpart-1.html">The Git Blog Part-1</a></h3>
+                    <p class="post-date">April 9, 2024</p>
+                    <p class="post-excerpt">This blog is the first part in a two-part blog series aimed at getting one familiar with Git. This part provides an introduction to git, gets you acquainted with the basic commands and tells one how to undo changes.</p>
+                    <a href="./blogs/gitpart-1.html" class="read-more">Read more →</a>
+                </div>
+            </section>
+        </main>
     </div>
-
 
     <div class="blog-component">
         <div class="blog-header">
@@ -54,10 +92,8 @@
         <div class="blog-abstract"> This article links to the slides and content regarding my first research paper. </div>
     </div>
 
-
     <footer>
-        <p> copyright &copy;2024 Sai Srikar</p>
+        <p>copyright &copy;2024 Sai Srikar</p>
     </footer>
-
 </body>
 </html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimal Control Theory 101 | Sai Srikar</title>
+    
+    <link rel="icon" href="/images/favicon.jpeg" id="favicon" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/modern-style.css">
+    <link rel="stylesheet" href="/css/blog-post.css">
+    <link rel="stylesheet" href="/css/math.css">
+    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="profile">
+                <h1 class="name">Sai Srikar Ventrapragada</h1>
+                <p class="title">Computer Science Researcher</p>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="/pages/blogs.html" class="active">Blogs</a></li>
+                    <li><a href="/pages/projects.html">Projects</a></li>
+                    <li><a href="/pages/about.html">About</a></li>
+                    <li><a href="/pages/resume.html">Resume</a></li>
+                </ul>
+            </nav>
+            
+            <div class="social-links">
+                <a href="https://github.com/" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
+                <a href="mailto:saisrikar20uari164@mahindrauniversity.edu.in">Email</a>
+            </div>
+        </aside>
+
+        <main class="content">
+            <article class="blog-post">
+                <header class="post-header">
+                    <h1 class="post-title">Optimal Control Theory 101: An Introduction to Mathematical Control Theory</h1>
+                    <p class="post-meta">April 20, 2024</p>
+                </header>
+                
+                <div class="post-content">
+                <div class="table-of-content">
+                    <h3>Table of Contents</h3>
+                        <ul>
+                            <li><a href="#introduction">Introduction</a></li>
+                            <li><a href="#optimal-control">Optimal Control Theory</a>
+                                <ul>
+                                    <li><a href="#dynamics">Dynamics of the System</a></li>
+                                    <li><a href="#payoff">Payoff</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#controllability">Controllability</a>
+                                <ul>
+                                    <li><a href="#unique-solution">Unique Solution</a></li>
+                                    <li><a href="#controllability-matrix">Controllability Matrix</a></li>
+                                    <li><a href="#observability">Observability</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="fore-note">
+                        This article provides a quick and comprehensive overview of optimal control theory and offers intuition behind the Pontryagin maximum principle.
+                </div>
+                
+                    <section id="introduction">
+                        <h2>Introduction</h2>
+                        <p>
+                            Optimal control theory is a branch of mathematical optimization that deals with finding control functions 
+                            that can drive a dynamical system from one state to another while minimizing a cost function. This blog post 
+                            aims to provide an intuitive understanding of the fundamental concepts.
+                        </p>
+                    </section>
+
+                    <section id="optimal-control">
+                        <h2>Optimal Control Theory</h2>
+                        
+                        <section id="dynamics">
+                            <h3>Dynamics of the System</h3>
+                            <p>
+                                In a continuous time system, the dynamics of the environment can be described by:
+                            </p>
+                            <div class="math-block">
+                                \[\dot{x}(t) = f(x(t),\alpha(t))\]
+                                \[x(0) = x^{0}\]
+                            </div>
+                            <p>
+                                Where \(x^{0}\) is the initial state and \(x(t)\) is the state of the system at time \(t\). 
+                                Here \(x : [0, ∞) → R^{n}\). Given that \(A\) is the set of control parameters, 
+                                the control function is given as \(α : [0, ∞) → A\).
+                            </p>
+                            <p>
+                                The dynamics of the system are controlled by:
+                            </p>
+                            <ul>
+                                <li>The initial state \(x^{0}\)</li>
+                                <li>The sequence of control actions \(\alpha(t)\)</li>
+                                <li>The laws governing the state transition</li>
+                    </ul>
+                        </section>
+
+                        <section id="payoff">
+                            <h3>Payoff</h3>
+                            <p>
+                                The control sequence \(\alpha^{*}(t)\) is considered optimal when:
+                            </p>
+                            <div class="math-block">
+                                \[P[\alpha^{*}(·)] ≥ P[\alpha(·)]\]
+                            </div>
+                            <p>
+                                where \(P[\alpha(·)]\) is the payoff functional, represented by:
+                            </p>
+                            <div class="math-block">
+                                \[P[\alpha(·)] := \int_{0}^{T} r(\mathbf{x}(t), \alpha(t)) \, dt + g(\mathbf{x}(T))\]
+                            </div>
+                            <p>
+                                Here \(r(\mathbf{x}(t), \alpha(t))\) represents the running cost and \(g(\mathbf{x}(T))\) 
+                                represents the Terminal cost.
+                            </p>
+                        </section>
+                    </section>
+
+                    <section id="controllability">
+                        <h2>Controllability</h2>
+                        <p>
+                            A system is <strong>controllable</strong> when there exists a trajectory from the initial state \(x^{0}\) 
+                            to the target, influenced by state dynamics and a specific sequence of control inputs.
+                        </p>
+
+                        <section id="unique-solution">
+                            <h3>Unique Solution</h3>
+                            <p>
+                                For any linear non-homogeneous system of ordinary differential equations (ODE), 
+                                the unique solution is given by:
+                            </p>
+                            <div class="math-block">
+                                \[x(t) = \mathbf{X}(t) {x}^0 + \mathbf{X}(t) \int_{0}^{t} \mathbf{X}^{-1}(s) N \alpha(s) \, ds\]
+                            </div>
+                            <p>
+                                Here \(\mathbf{X}(t)\) is the fundamental solution:
+                            </p>
+                            <div class="math-block">
+                                \[\mathbf{X}(t) = e^{tM} := \sum_{k=0}^{\infty} \frac{t^k M^k}{k!}\]
+                            </div>
+                        </section>
+
+                        <section id="controllability-matrix">
+                            <h3>Controllability Matrix</h3>
+                            <p>
+                                For any given optimal control problem, we define controllability matrix \(G\) as:
+                            </p>
+                            <div class="math-block">
+                                \[G = G(M,N) := [N,MN,M^{2}N,...,M^{n−1}N]\]
+                            </div>
+                            <p>
+                                <strong>Theorem:</strong> A system is controllable when rank of \(G = n\) and \(Re \lambda ≤ 0\) 
+                                for each eigenvalue \(\lambda\) of \(M\)
+                            </p>
+                        </section>
+
+                        <section id="observability">
+                            <h3>Observability</h3>
+                            <p>
+                                For linear systems, observability and controllability are dual concepts. 
+                                A system is observable if the knowledge of \(y(·)\) on any time interval [0,t] 
+                                allows us to compute \(x^{0}\).
+                            </p>
+                        </section>
+                    </section>
+
+                    <section class="references">
+                    <h2>References</h2>
+                    <ol>
+                            <li><a href="https://math.berkeley.edu/~evans/control.course.pdf">An Introduction to Mathematical Control Theory</a></li>
+                            <li><a href="https://homes.cs.washington.edu/~todorov/courses/amath579/Todorov_chapter.pdf">Optimal Control Theory</a></li>
+                    </ol>
+                    </section>
+                </div>
+                
+                <footer class="post-footer">
+                    <div class="post-navigation">
+                        <a href="./som.html" class="prev-post">← Previous: Self-Organizing Map</a>
+                        <span class="next-post"></span>
+                    </div>
+                </footer>
+            </article>
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        <p>copyright &copy;2024 Sai Srikar</p>
+    </footer>
+</body>
+</html> 

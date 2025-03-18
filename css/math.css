@@ -1,0 +1,93 @@
+/* Math-specific styles */
+.math-block {
+    overflow-x: auto;
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+.MathJax {
+    font-size: 1.1em !important;
+}
+
+/* For inline math */
+.math-inline {
+    padding: 2px 4px;
+}
+
+/* Equation references */
+.equation-ref {
+    color: var(--secondary-color);
+    font-size: 0.9em;
+    margin-left: 10px;
+}
+
+/* Theorem boxes */
+.theorem {
+    margin: 20px 0;
+    padding: 15px 20px;
+    background-color: #f0f8ff;
+    border-left: 4px solid var(--accent-color);
+    border-radius: 3px;
+}
+
+.theorem-title {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Definition boxes */
+.definition {
+    margin: 20px 0;
+    padding: 15px 20px;
+    background-color: #fff5f5;
+    border-left: 4px solid #e53e3e;
+    border-radius: 3px;
+}
+
+.definition-title {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .math-block {
+        padding: 15px;
+    }
+    
+    .MathJax {
+        font-size: 1em !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .math-block {
+        padding: 12px;
+        font-size: 0.95em;
+    }
+    
+    .theorem, .definition {
+        padding: 12px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .math-block {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+    
+    .MathJax {
+        font-size: 0.9em !important;
+    }
+    
+    .theorem, .definition {
+        padding: 10px;
+    }
+    
+    .theorem-title, .definition-title {
+        font-size: 16px;
+    }
+} 

@@ -3,170 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sai Srikar</title>
+    <title>The Git Blog Part-1 | Sai Srikar</title>
     
     <link rel="icon" href="/images/favicon.jpeg" id="favicon" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/blog-page.css">
-
-   
-    
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/modern-style.css">
+    <link rel="stylesheet" href="/css/blog-post.css">
 </head>
 <body>
-    
-    <nav class="Nav-bar">
-        <div class="Icon"><a href="../../index.html" class="custom-link">Sai Srikar Ventrapragada</a></div>
-        <div class="Nav-bar-links">
-            <div> <a href="/pages/blogs.html" class="custom-link">Blogs</a>     </div> 
-            <div> <a href="/pages/blogs.html" class="custom-link">Projects</a>  </div>
-            <div> <a href="/pages/projects.html" class="custom-link">About</a>  </div>
-            <div> <a href="/pages/resume.html" class="custom-link">Resume</a>   </div>
-        </div>
-    </nav> 
-    
+    <div class="container">
+        <aside class="sidebar">
+            <div class="profile">
+                <h1 class="name">Sai Srikar Ventrapragada</h1>
+                <p class="title">Computer Science Researcher</p>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="/pages/blogs.html" class="active">Blogs</a></li>
+                    <li><a href="/pages/projects.html">Projects</a></li>
+                    <li><a href="/pages/about.html">About</a></li>
+                    <li><a href="/pages/resume.html">Resume</a></li>
+                </ul>
+            </nav>
+            
+            <div class="social-links">
+                <a href="https://github.com/" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
+                <a href="mailto:saisrikar20uari164@mahindrauniversity.edu.in">Email</a>
+            </div>
+        </aside>
 
-    <div class="blog-div">
+        <main class="content">
+            <article class="blog-post">
+                <header class="post-header">
+                    <h1 class="post-title">The Global Information Tracker (GIT) Blog Part-1</h1>
+                    <p class="post-meta">April 9, 2024</p>
+                </header>
+                
+                <div class="post-content">
+                    <div class="table-of-content">
+                        <h3>Table of Contents</h3>
+                        <div class="table-heading-part"><span class="table-heading">Part-0 Introduction:</span> This part covers my motivation for writing this two-part blog series on Git</div>
+                        <div class="table-heading-part"><span class="table-heading">Part-1 Basics:</span> This part provides an introduction to git, gets you acquainted with the basic commands and tells one how to undo changes</div>
+                        <div class="table-heading-part"><span class="table-heading">Part-2 Branches:</span> This part gives one an intuition as to what are branches, what are the different types of branches and what are the various kinds of merges that can take place</div>
+                    </div>
 
-                <div class="blog-name">The Global Information Tracker (GIT) Blog Part-1</div>
-                <div class="blog-date">9th April 2024</div>                
+                    <h2>Part-0 Introduction</h2>
+                    <h3>BackStory</h3>
+                    <p>
+                        During my first year of undergrad I came across this distributed version control system(DVCS) called Git and the developer platform GitHub. 
+                        At that time I was looking into it as I heard about <a href="https://hacktoberfest.com/" class="custom-link" style="font-weight: bold;">"Hacktoberfest"</a> taking place in my university.  
+                        Since Java was one of the many accepted languages and given my basic understanding of it since my schooling. I went ahead and looked into the event.
+                        Back in 2020 Hacktoberfest was giving free T-shirts to participants that complete the challenge I was intrigued by it.
+                    </p>
 
-            <div class="blog-content">
+                    <p>
+                        To complete the challenge one was required to contribute to any public repository with the topic Hacktoberfest. To be specific one had 
+                        to make around 4-5 successful pull requests i.e their changes had to be merged to the main repository 
+                        post their registration on their website (don't worry if you don't understand what I said here).
+                    </p>
 
-                <div class="blog-table-of-content">
-                    <div class="table-of-content">Table of content</div>
-                    <div class="table-heading-part"> <span class="table-heading">Part-0 Introduction :</span> This part covers my motivation for writing this two-part blog series on Git </div>
-                    <div class="table-heading-part"> <span class="table-heading">Part-1 Basics :</span> This part provides an introduction to git, get's you acquainted with the basic commands and tells one how to undo changes </div>
-                    <div class="table-heading-part"> <span class="table-heading">Part-2 Branches :</span> This part gives one an intuition as to what are branches, what are the different types of branches and what are the various kinds of merges that can take place</div>
+                    <p>
+                        Given that there was only a week left for October to end. I learnt the basics of git such as how to pull and how to submit pull requests on Github. 
+                        My knowledge on Git had stayed this way until my third year of undergrad where I was able to do majority of my work with this basic knowledge. 
+                        However, recently I have developed a keen interest to learn git thoroughly. Why you the sudden interest, you wonder? Simply put, I aim to leverage Git more effectively for my future projects. 
+                        In this blog series, I document my journey of unraveling the complexities of Git. The blog series is an amalgamation of my understandings from the git documentation, 
+                        the book "Ry's Git Tutorial" and my own learnings along way during my undergrad. Another reason for me to write these series of blogs was to have these blogs as a place I can come back to from time to time to revise things as and when required.
+                    </p>
+
+                    <h2>Part-1 The Basics</h2>
+                    
+                    <!-- Include the rest of your content here -->
+                    
+                    <p>
+                        Think of the history of Git is something similar to a Linked List is my guess, where they link the new commit to the previous commit. Let's see if this is true or not in part 3.
+                        Another beautiful use case of git is the ability to collaborate and work on projects in parallel. The whole world of open source is built on the foundations of git. 
+                        To understand this further let's take a simple example, suppose you and your friends went to hackathon and you want to develop a website where two of you work on the backend while the other works on frontend. 
+                        If you had a single code base where both of sides are developing things can get messy real quick. Using Git one can make two separate branches in the repo named backend and frontend. This way one can use the same file structure and work in parallel at their respective branches. 
+                        Once you have tested the functionality of each side, you can merge both of these branches onto the main branch. This example show us how Git helps in increasing the productive of a developer. Another great reason to create branches is that a branch provides you with opportunity to have an independent line of work. 
+                        This way you don't have to replicate all the files and pre-existing codebase if you want to experiment on it. If the experiment works out, you can always merge it to the main branch else just delete the entire branch and forget about it. An additional benefit of this is that all your experiments will be in a single directory as multiple branches that don't affect the working stable version.
+                    </p>
+                    
+                    <p>
+                        <b>1. Topic Branch:</b> is used to work on a specific topic or task. It is typically created off the main branch (such as main) and is used to isolate changes related to that topic. Once the work on the topic is completed, the changes in the topic branch can be merged back into the main branch.
+                        <br><br>
+                        <b>2. Feature Branch:</b> is similar to a topic branch but it is specifically used to develop a new feature for the project. It is created off the main branch and is used to work on the new feature in isolation from the main codebase. Once the feature is complete, the changes can be merged back into the main branch. This branch generally is maintained for longer duration than Topic branches. 
+                        <br><br>
+                        <b>3. HotFix Branch:</b> is used to quickly address a critical issue in the codebase, such as a bug or security vulnerability. It is created off the main branch or sometimes a release branch and is used to make the necessary changes. Once the fix is complete, the hotfix branch is merged back into the main branch (and possibly other active branches) to apply the fix to the codebase. 
+                    </p>
+
+                    <p>
+                        A merge conflict takes places when we try to merge branches that have edited the same content. Git doesn't know how to combine the two changes, so it stops to ask us what to do. 
+                    </p>
                 </div>
-
-            </div>
-            
-            <div class="heading">Part-0 Introduction</div>
-            <div class="sub-heading">BackStory</div>
-            <div class="para-content">
-                During my first year of undergrad I came across this distributed version control system(DVCS) called Git and the developer platform GitHub. 
-                At that time I was looking into it as I heard about <a href="https://hacktoberfest.com/" class="custom-link" style="font-weight: bold;">"Hacktoberfest"</a> taking place in my university.  
-                Since Java was one of the many accepted languages and given my basic understanding of it since my schooling. I went ahead and looked into the event.
-                Back in 2020 Hacktoberfest was giving free T-shirts to participants that complete the challenge I was intrigued by it.
-            </div>
-
-            <div class="para-content">
-                To complete the challenge one was required to contribute to any public repository with the topic Hacktoberfest. To be specific one had 
-                to make around 4-5 successful pull requests  i.e their changes had to be merged to the  main repository 
-                post their registration on their website (don’t worry if you don’t understand what I said here).
-            </div>
-
-            <div class="para-content">
-                Given that there was only a week left for October to end. I learnt the basics of git such as how to pull and how to submit pull requests on Github. 
-                My knowledge on Git had stayed this way until my third year of undergrad where I was able to do majority of my work with this basic knowledge. 
-                However, recently I have developed a keen interest to learn git thoroughly. Why you the sudden interest, you wonder? Simply put, I aim to leverage Git more effectively for my future projects. 
-                In this blog series, I document my journey of unraveling the complexities of Git. The blog series is an amalgamation of my understandings from the git documentation, 
-                the book “Ry’s Git Tutorial” and my own learnings along  way during my undergrad. Another reason for me to write these series of blogs was to have these blogs as a place I can come back to from time to time to revise things as and when required.
-            </div>
-
-            <div class="heading">Part-1 The Basics</div>
-            <div class="para-content">
-                Have you ever found yourself working on a project and wanting to experiment with the code, perhaps to improve it or for another purpose ? but you didn’t do it as you were afraid that the code might break. 
-                If the answer to that question is yes, then git solves the problem of when you are stuck with code that doesn’t work and need to go back to a working version of the project by constantly undoing or saving the stable files somewhere. 
-                The purpose of Git is to a be version control system (VCS) i.e  you get to track all the changes you make in your code base. Whats the point of tracking? If you track your changes, you can go to a working version when things fail or make a branches at multiple places, 
-                experiment and develop parallelly in peace. Think of Git like a Time-Machine for your code. Where you not only “Revert” to the past but can also “Merge” into the future.  
-            </div>
-
-            <div class="para-content">
-                Git is a distributed version control system (DVCS) that was developed by Linus Torvalds back in 2005. One of the main reasons for developing it was that with Git everyone could locally work on their own local copies of the codebase 
-                and leave the merging and sharing of code to a later point i.e after they are done building. The advantage of this was now multiple people could work parallel on the codebase. Now that the context is set, 
-                let's dive in to the world of git and the plethora of git commands that help us manipulate files.
-            </div>
-
-            <div class="para-content">
-                When you start working on a project you would ideally want to have the <b>.git</b> directory to be present in it. Think of the <b>".git directory "</b> as the watchmen that tracks all the changes in data of your repository(repository is an another name for your codebase, it is also called as repo). 
-                To get the .git folder you initialise your repository by typing in <b>git init</b>. To check all the marked changes that have taken place we run  <b>git status</b>. When I say mark it means that while you are coding your project there are certain things that you would want to track and certain things that you don’t want to track. 
-                This could be because of security reasons (for example an api key) or because the content is not necessary (for example some executable files, a general rule of thumb is to omit  files that can be generated from the track files). The practice of segregating files into track and untracked allows us to keep the repo lean and clean.
-            </div>
-
-            <div class="para-content">
-                Incase this is your first time using Git, one has to configure as to who the author to the code is by running the <b>git config</b> commands to set the username and name respectively by running   <b>git config —global user.name &lt;username &gt; </b> and <b>git config —global user.email &lt;youremail@exampleserviceprovider.com &gt; </b>.
-                One can also configure their git credentials locally as well by changing the flag to <b>—local</b>. 
-            </div>
-
-            <div class="para-content">
-                Tracking various versions or files is a two stage process. First is when we stage the files and second is when we commit them. The advantage of this two step procedure is that it gives us  the ability to make meaningful progression by adding and removing files in the stage phase i.e group relevant changes to distinct snapshot/commit. 
-                To track a file/directory we use the <b>git add &lt;file name&gt; </b>or <b>git add &lt;directory name &gt; </b> and to commit them we run <b>git commit</b>. You can also track multiple files by adding them as arguments to the <b>git add </b>command or track all the files in the repo with the <b>git add .</b> command.  
-                While committing changes is a good practice it is important to add meaningful messages to them regarding what has commit achieved. This is done by adding in a flag <b>-m</b>  "&lt;commit message&gt;" to <b>git commit</b> and this makes the command complete. Once you reach a point where you have performed multiple commits once can view the history 
-                of the various stages/versions of the project with <b>git log</b> command. When you do this, you can see that each time you made a commit there is a very large unique string attached to it. This string helps us identify which commit we are talking about and an other perk of these strings is that they are <b>SHA-1</b> i.e  the commit will never be corrupted without Git knowing about it 
-                because of a concept called <b>checksum</b>. When do I know I need to commit ? Well there are two general rules to know when to commit. The first being, you commit a snapshot for each significant addition to your project it could be a new feature or just an upgrade. Second, don’t commit a snapshot if you can’t come up with a single, specific message for it.
-            </div>
-            
-            <div class="para-content">
-                Now that we have the snapshots in the history, in the event of a code break you can checkout back to a working version. First we need to check which version we want to go back to by running the <b>git log —oneline </b> with <b>-oneline</b> flag as it improves the readability of the history. 
-                Once you have the commit ID we checkout to the particular safe working version by performing <b>git checkout &lt;commit ID&gt; </b>.  
-                Once you are satisfied with the changes you can hop onto the main branch with <b>git checkout main</b>.  If going through the commit IDs seems to be cumbersome one can tag their commits with <b>git tag -a &lt;tag name&gt; -m "&lt;commit message&gt;" </b> to the commit they are currently present on.  
-            </div>
-
-            <div class="para-content">
-                While working on a current commit, if you made some bad decisions and you want to remove the commit from your history/log one can do this by getting the ID of the commit we want to undo/remove and then performing <b>git revert &lt;commit ID&gt;</b>.  
-                When this happens an interesting phenomenon takes place, instead of deleting the commit Git figures out how to undo the changes it contains, then takes on another commit with the resulting content This happens as git was written with the vision to never lose history. 
-                If there is a scenario lets say where you are on a particular commit and you write  a new module/function but the code breaks and you want to go back to a functioning version then <b>git reset —hard</b> helps to undo the changes that are not committed i.e don’t have a commit ID. When you run this all the tracked files content changes to the most recent commit. 
-                Once you have reached a stage where you want to delete all the untracked files, then you can run <b>git clean -f</b>. To summarise if its the working directory you want to make changes in then you run <b>git reset —hard</b> but if its a commit you want to undo you run  <b>git revert &lt;commit ID&gt; of the commit you want to remove&gt; </b>. 
-            </div>
-
-            <div class="heading">Part-2 Branches</div>
-            <div class="para-content">  
-                Think of the history of Git is something similar to a Linked List is my guess, where they link the new commit to the previous commit. Let’s see if this is true or not in part 3.
-                Another beautiful use case of git is the ability to collaborate and work on projects in parallel. The whole world of open source is built on the foundations of git. 
-                To understand this further let’s take a simple example, suppose you and your friends went to hackathon and you want to develop a website where two of you work on the backend while the other works on frontend. 
-                If you had a single code base where both of sides are developing things can get messy real quick. Using Git one can make two separate branches in the repo named backend and frontend. This way one can use the same file structure and work in parallel at their respective branches. 
-                Once you have tested the functionality of each side, you can merge both of these branches onto the main branch. This example show us how Git helps in increasing the productive of a developer. Another great reason to create branches is that a branch provides you with opportunity to have an independent line of work. 
-                This way you don’t have to replicate all the files and pre-existing codebase if you want to experiment on it. If the experiment works out, you can always merge it to the main branch else just delete the entire branch and forget about it. An additional benefit of this is that all your experiments will be in a single directory as multiple branches that don’t affect the working stable version.
-            </div>
-            
-            <div class="para-content">
-                If the above context seems overwhelming don’t worry, we’ll go through the concepts of branching and rebasing step by step. To view the existing branches one can use <b>git branch</b>. 
-                If you have not made any branches till now, you see that only the main branch is present when you run this command. The <b>"*"</b> next to the branch denotes the branch one is present in. 
-                Now before we start making branches in a second we need to know that <b>"HEAD"</b> is git’s way of telling us which snapshot/commit we are currently on. The rule of thumb that people generally follow is 
-                “Create a new branch for each major addition in your project” i.e don’t create branches if you cannot give it a specific name. To create a new branch, first checkout as to where you want the starting point of the branch to be with <b>git checkout &lt;place&gt;</b>. 
-                Then you perform <b>git branch &lt;branch name&gt;</b> to create the new branch. You enter into this branch with <b>git checkout &lt;the new branch name&gt;</b>.  Now if you make some changes and make a new commit then a new node will be created from the branch where you are currently present at and the <b>HEAD</b> automatically moves to the new commit.
-            </div>
-
-            <div class="para-content">
-                Now one thing you need to remember is that when you create branches the log history reflected to you depends on the branch the <b>HEAD</b> is currently present on. For example if you have two different branches and if you checkout to branch B1 and check the history and then checkout to branch B2 
-                and check the history there is a high possibility that both of them wont reflect the same logs as branches offer us an independent line of development. Think of them as separate project folders. Once you have learnt how to create multiple branches the next step is to merge the two branches, 
-                this is where it can tricky very fast because of merge conflicts which you will see later on. In order to merge branches you first checkout to the branch which you want to update and then perform <b>git merge &lt;branch name you want the branch to be merged to&gt;</b>. In general the main branch is known to be the stable branch of the project. 
-                Please note, there are different kinds of merges in Git. The most basic merge is known as fast forward merge where you move the tip of a branch to the match the tip of another branch and after this merge both the branches have same history. Once this is done for hygiene purpose, if you are not going to continue experimenting on any of the branches post merging you can delete by with <b>git branch -d &lt;branch name&gt;</b>.  
-                Here the <b>-d</b> flag tells Git to delete the branch. A key point to understand here is that Git doesn’t delete branches which have unmerged changes. However if one is sure that they don’t need the branch they run <b>git branch -D  &lt;branch name&gt;</b> to forcefully delete it.
-            </div>
-
-            <div class="para-content">
-                Merging branches is not always linear. If you have a situation where when one try to merge two branches that have edited the same content. Git doesn’t know how to combine the two changes, so it stops to ask us what to do. Think of merge conflict like messing up the shared variables in a critical section. The way to solve merge conflict is to manually intervene and update as to what are the changes we want. Git uses <<<<<<<, =======, and >>>>>>>  as markers to show us the conflict and  these should be deleted before we commit the file once changes are made. 
-                When we are committing this files we don’t need to use <b>-m </b>flag as Git already knows it’s a merge of the conflict list.  For example if you have the font style to be Arial in one branch and Times new romain in the other, when you merge you need to choose which style you want.
-            </div>
-
-            <div class="para-content">
-                To help you understand branches better, the most common types of branches are as following: 
-            </div>
-            
-            <div class="para-content">
-                <b>1.Topic Branch:</b> is used to work on a specific topic or task. It is typically created off the main branch (such as main) and is used to isolate changes related to that topic. Once the work on the topic is completed, the changes in the topic branch can be merged back into the main branch.	
-                <br><br>
-                <b>2.Feature Branch:</b> is similar to a topic branch but it is specifically used to develop a new feature for the project. It is created off the main branch and is used to work on the new feature in isolation from the main codebase. Once the feature is complete, the changes can be merged back into the main branch. This branch generally is maintained for longer duration than Topic branches. 
-                <br><br>
-                <b>3.HotFix Branch:</b> is used to quickly address a critical issue in the codebase, such as a bug or security vulnerability. It is created off the main branch or sometimes a release branch and is used to make the necessary changes. Once the fix is complete, the hotfix branch is merged back into the main branch (and possibly other active branches) to apply the fix to the codebase. 
-            </div>
-
-            <div class="para-content">
-                A merge conflict takes places when we try to merge branches that have edited the same content. Git doesn’t know how to combine the two changes, so it stops to ask us what to do. 
-            </div>
-
-            <div class="next-blog">
-                To read the second part of the blog click here --> <b><a href="./gitpart-2.html" class="custom-link">Git Blog Part-2</a></b>
-            </div>
-
+                
+                <footer class="post-footer">
+                    <div class="post-navigation">
+                        <span class="prev-post"></span>
+                        <a href="./gitpart-2.html" class="next-post">Next: Git Blog Part-2 →</a>
+                    </div>
+                </footer>
+            </article>
+        </main>
     </div>
- 
-    <div class="footer">copyright &copy;2024 Sai Srikar</div>
 
+    <footer class="site-footer">
+        <p>copyright &copy;2024 Sai Srikar</p>
+    </footer>
 </body>
-
 </html> 
 
